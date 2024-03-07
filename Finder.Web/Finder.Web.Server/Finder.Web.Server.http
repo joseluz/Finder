@@ -1,0 +1,6 @@
+@Finder.Web.Server_HostAddress = http://localhost:5003
+
+GET {{Finder.Web.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finder.Web.Test", "Finder.Web.Test\Finder.Web.Test.csproj", "{487439A0-F20A-4734-B968-6907000F77F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finder.Web.Server", "Finder.Web\Finder.Web.Server\Finder.Web.Server.csproj", "{B2AA9C7E-5A22-4BB9-A071-3D6B99858631}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "finder.web.client", "Finder.Web\finder.web.client\finder.web.client.esproj", "{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{487439A0-F20A-4734-B968-6907000F77F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487439A0-F20A-4734-B968-6907000F77F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487439A0-F20A-4734-B968-6907000F77F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487439A0-F20A-4734-B968-6907000F77F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2AA9C7E-5A22-4BB9-A071-3D6B99858631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2AA9C7E-5A22-4BB9-A071-3D6B99858631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2AA9C7E-5A22-4BB9-A071-3D6B99858631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2AA9C7E-5A22-4BB9-A071-3D6B99858631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA65C90-F2E1-4AB4-A687-39B91738F9FA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C871958C-FF1E-4B67-9BBC-D116AA144226}
+	EndGlobalSection
+EndGlobal
