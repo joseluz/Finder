@@ -1,6 +1,6 @@
-﻿<h1 id="tableLabel">Weather forecast</h1>
+﻿<h1 id="tableLabel">{{'FORECAST-PAGE.PAGE-TITLE'|translate}}</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>{{ 'FORECAST-PAGE.HEADER'|translate }}</p>
 
 <p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
   href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
@@ -8,10 +8,10 @@
 <table *ngIf="forecasts">
   <thead>
   <tr>
-    <th class="text-indigo-800">Date</th>
-    <th>Temp. (C)</th>
-    <th>Temp. (F)</th>
-    <th>Summary</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.DATE' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-C' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-F' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.SUMMARY' | translate }}</th>
   </tr>
   </thead>
   <tbody>
@@ -25,3 +25,6 @@
   </tr>
   </tbody>
 </table>
+<button class="border p-3"
+        (click)="switchLanguage()">{{ 'FORECAST-PAGE.CHANGE-LANGUAGE'|translate }}
+</button>

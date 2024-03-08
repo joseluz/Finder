@@ -1,0 +1,13 @@
+{
+  "FORECAST-PAGE": {
+    "PAGE-TITLE": "Weather Forecast",
+    "CHANGE-LANGUAGE": "Change Language",
+    "HEADER": "This component demonstrates fetching data from the server.",
+    "DATA-GRID-HEADER": {
+      "DATE": "Date",
+      "TEMPERATURE-IN-C": "Temp. (C)",
+      "TEMPERATURE-IN-F": "Temp. (F)",
+      "SUMMARY": "Summary"
+    }
+  }
+}

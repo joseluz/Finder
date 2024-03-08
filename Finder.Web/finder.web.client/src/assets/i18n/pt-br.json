@@ -1,0 +1,13 @@
+{
+  "FORECAST-PAGE": {
+    "PAGE-TITLE": "Previsão do Tempo",
+    "CHANGE-LANGUAGE": "Mudar a língua",
+    "HEADER": "Esse component demonstra como ler dados do server.",
+    "DATA-GRID-HEADER": {
+      "DATE": "Data",
+      "TEMPERATURE-IN-C": "Temp. (C)",
+      "TEMPERATURE-IN-F": "Temp. do jeito errado (F)",
+      "SUMMARY": "Resumão"
+    }
+  }
+}
