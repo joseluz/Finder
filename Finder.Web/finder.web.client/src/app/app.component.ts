@@ -1,13 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { Mapper } from "@automapper/core";
+import { AutoMapper } from "./app.mapper";
+import { WeatherForecastViewItem } from "./ui/view-items/weather-forecast.view-item";
+import { WeatherForecast } from "./model/weather-forecast.model";
 
 @Component({
   selector: 'app-root',
@@ -15,12 +12,13 @@ interface WeatherForecast {
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  public forecasts: Array<WeatherForecastViewItem> = [];
   private static brazilianPortugueseCode = 'pt-br';
   private static americanEnglishCode = 'en';
 
   constructor(private http: HttpClient,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              @Inject(AutoMapper) private autoMapper: Mapper) {
     translateService.use(AppComponent.brazilianPortugueseCode);
   }
 
@@ -29,19 +27,17 @@ export class AppComponent implements OnInit {
   }
 
   getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    this.http.get<WeatherForecast[]>('/weatherforecast')
+      .subscribe({
+          next: (result: Array<WeatherForecast>): void => {
+            this.forecasts = this.autoMapper.mapArray(result, WeatherForecast, WeatherForecastViewItem);
+          },
+          error: (error): void => {
+            console.error(error);
+          }
+        }
+      );
   }
-
-  title = 'finder.web.client';
-
-  currentLanguage = 'pt-br'
 
   switchLanguage(): void {
     if (this.translateService.currentLang == AppComponent.brazilianPortugueseCode) {

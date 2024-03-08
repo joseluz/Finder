@@ -1,4 +1,4 @@
-﻿<h1 id="tableLabel">{{'FORECAST-PAGE.PAGE-TITLE'|translate}}</h1>
+﻿<h1 id="tableLabel">{{ 'FORECAST-PAGE.PAGE-TITLE'|translate }}</h1>
 
 <p>{{ 'FORECAST-PAGE.HEADER'|translate }}</p>
 
@@ -15,11 +15,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let forecast of forecasts">
+  <tr *ngFor="let forecast of forecasts"
+      [ngClass]="{ 'text-indigo-300': forecast.isTooCold,
+                   'text-amber-600': forecast.isTooHot,
+                   'text-green-800': !forecast.isTooHot && !forecast.isTooCold}">
     <td>{{ forecast.date }}</td>
-    <td
-      [ngClass]="forecast.temperatureC < 0 ? 'text-indigo-300' : forecast.temperatureC >35 ? 'text-amber-600' : 'text-green-800'">{{ forecast.temperatureC }}
-    </td>
+    <td>{{ forecast.temperatureC }}</td>
     <td>{{ forecast.temperatureF }}</td>
     <td>{{ forecast.summary }}</td>
   </tr>
