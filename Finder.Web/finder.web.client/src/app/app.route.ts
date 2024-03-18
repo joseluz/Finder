@@ -13,7 +13,3 @@ export const routes: Array<AppRoute> = [
     component: ForecastPageComponent
   }
 ];
-
-export function getBaseUrl(): string {
-  return document.getElementsByTagName('base')[0].href;
-}

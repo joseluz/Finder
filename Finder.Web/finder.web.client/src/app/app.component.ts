@@ -15,9 +15,7 @@ export class AppComponent {
   private static brazilianPortugueseCode = 'pt-br';
   private static americanEnglishCode = 'en';
 
-  constructor(private http: HttpClient,
-              private translateService: TranslateService,
-              @Inject(AutoMapper) private autoMapper: Mapper) {
+  constructor(private translateService: TranslateService) {
     translateService.use(AppComponent.brazilianPortugueseCode);
   }
 

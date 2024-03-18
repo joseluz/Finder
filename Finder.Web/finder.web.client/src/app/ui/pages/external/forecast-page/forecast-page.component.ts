@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ForecastTableComponent } from "../../../components/forecast-table/forecast-table.component";
-import { CommonModule } from "@angular/common";
+import { NgIf } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import { WeatherForecastViewItem } from "../../../view-items/weather-forecast.view-item";
 import { WeatherForecast } from "../../../../model/weather-forecast.model";
@@ -13,8 +13,8 @@ import { Mapper } from "@automapper/core";
   standalone: true,
   imports: [
     ForecastTableComponent,
-    CommonModule,
-    TranslateModule
+    TranslateModule,
+    NgIf
   ],
   templateUrl: './forecast-page.component.html',
 })
@@ -25,11 +25,11 @@ export class ForecastPageComponent implements OnInit {
               @Inject(AutoMapper) private autoMapper: Mapper) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getForecasts();
   }
 
-  getForecasts() {
+  getForecasts(): void {
     this.http.get<WeatherForecast[]>('/weatherforecast')
       .subscribe({
           next: (result: Array<WeatherForecast>): void => {

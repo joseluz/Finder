@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from "@angular/common";
+import { NgClass, NgIf } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import { WeatherForecastViewItem } from "../../view-items/weather-forecast.view-item";
 
@@ -7,8 +7,9 @@ import { WeatherForecastViewItem } from "../../view-items/weather-forecast.view-
   selector: 'finder-forecast-table',
   standalone: true,
   imports: [
-    CommonModule,
-    TranslateModule
+    TranslateModule,
+    NgClass,
+    NgIf
   ],
   templateUrl: './forecast-table.component.html',
 })
