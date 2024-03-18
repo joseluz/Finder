@@ -1,0 +1,21 @@
+<table *ngIf="forecasts">
+  <thead>
+  <tr>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.DATE' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-C' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-F' | translate }}</th>
+    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.SUMMARY' | translate }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let forecast of forecasts"
+      [ngClass]="{ 'text-indigo-300': forecast.isTooCold,
+                   'text-amber-600': forecast.isTooHot,
+                   'text-green-800': !forecast.isTooHot && !forecast.isTooCold}">
+    <td>{{ forecast.date }}</td>
+    <td>{{ forecast.temperatureC }}</td>
+    <td>{{ forecast.temperatureF }}</td>
+    <td>{{ forecast.summary }}</td>
+  </tr>
+  </tbody>
+</table>

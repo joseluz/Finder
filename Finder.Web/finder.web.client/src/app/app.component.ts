@@ -11,8 +11,7 @@ import { WeatherForecast } from "./model/weather-forecast.model";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  public forecasts: Array<WeatherForecastViewItem> = [];
+export class AppComponent {
   private static brazilianPortugueseCode = 'pt-br';
   private static americanEnglishCode = 'en';
 
@@ -20,23 +19,6 @@ export class AppComponent implements OnInit {
               private translateService: TranslateService,
               @Inject(AutoMapper) private autoMapper: Mapper) {
     translateService.use(AppComponent.brazilianPortugueseCode);
-  }
-
-  ngOnInit() {
-    this.getForecasts();
-  }
-
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast')
-      .subscribe({
-          next: (result: Array<WeatherForecast>): void => {
-            this.forecasts = this.autoMapper.mapArray(result, WeatherForecast, WeatherForecastViewItem);
-          },
-          error: (error): void => {
-            console.error(error);
-          }
-        }
-      );
   }
 
   switchLanguage(): void {

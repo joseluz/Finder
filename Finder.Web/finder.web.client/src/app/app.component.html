@@ -1,31 +1,4 @@
-﻿<h1 id="tableLabel">{{ 'FORECAST-PAGE.PAGE-TITLE'|translate }}</h1>
-
-<p>{{ 'FORECAST-PAGE.HEADER'|translate }}</p>
-
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
-  href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
-
-<table *ngIf="forecasts">
-  <thead>
-  <tr>
-    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.DATE' | translate }}</th>
-    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-C' | translate }}</th>
-    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.TEMPERATURE-IN-F' | translate }}</th>
-    <th>{{ 'FORECAST-PAGE.DATA-GRID-HEADER.SUMMARY' | translate }}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let forecast of forecasts"
-      [ngClass]="{ 'text-indigo-300': forecast.isTooCold,
-                   'text-amber-600': forecast.isTooHot,
-                   'text-green-800': !forecast.isTooHot && !forecast.isTooCold}">
-    <td>{{ forecast.date }}</td>
-    <td>{{ forecast.temperatureC }}</td>
-    <td>{{ forecast.temperatureF }}</td>
-    <td>{{ forecast.summary }}</td>
-  </tr>
-  </tbody>
-</table>
+﻿<router-outlet></router-outlet>
 <button class="border p-3"
         (click)="switchLanguage()">{{ 'FORECAST-PAGE.CHANGE-LANGUAGE'|translate }}
 </button>
