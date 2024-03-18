@@ -28,7 +28,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient]
       }
     }),
-    ForecastTableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

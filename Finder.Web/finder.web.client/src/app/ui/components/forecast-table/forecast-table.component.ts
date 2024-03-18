@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgClass, NgIf } from "@angular/common";
+import { NgClass, NgForOf, NgIf } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import { WeatherForecastViewItem } from "../../view-items/weather-forecast.view-item";
 
@@ -9,7 +9,8 @@ import { WeatherForecastViewItem } from "../../view-items/weather-forecast.view-
   imports: [
     TranslateModule,
     NgClass,
-    NgIf
+    NgIf,
+    NgForOf
   ],
   templateUrl: './forecast-table.component.html',
 })
